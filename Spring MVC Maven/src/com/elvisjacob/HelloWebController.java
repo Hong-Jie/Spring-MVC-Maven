@@ -16,11 +16,21 @@ public class HelloWebController {
 	public ModelAndView home() {
 		ModelAndView modelandview = new ModelAndView("userForm");
 		User user = new User();
+		modelandview.addObject("user", user);
+		
 		Map<String,String> genderMap = new HashMap<String, String>();
 		genderMap.put("female","Female");
 		genderMap.put("male","Male");
-		modelandview.addObject("user", user);
 		modelandview.addObject("genderMap",genderMap);
+		
+		Map<String,String> countryMap = new HashMap<String, String>();
+		countryMap.put("TW","Taiwan");
+		countryMap.put("US","United States");
+		countryMap.put("UK","United Kingdom");
+		countryMap.put("JP","Japan");
+		countryMap.put("SG","Singapore");
+		modelandview.addObject("countryMap",countryMap);
+		
 		return modelandview;
 	}
 	

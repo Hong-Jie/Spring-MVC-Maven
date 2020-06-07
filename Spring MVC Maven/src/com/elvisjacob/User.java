@@ -1,7 +1,15 @@
 package com.elvisjacob;
 
 public class User {
-	private String name, gender;
+	private String name, gender, country, msg;
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
 
 	public String getName() {
 		return name;
@@ -22,6 +30,14 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [name=" + name + ", gender=" + gender + "]";
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
 	}
 	
 }
