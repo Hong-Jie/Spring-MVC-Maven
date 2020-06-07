@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Welcome friend</title>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/files/css/w3.css">
 </head>
 <body>
 <c:set var="gender" value="${user.gender}"/>

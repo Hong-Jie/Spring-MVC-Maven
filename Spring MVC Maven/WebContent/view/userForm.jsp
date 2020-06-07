@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Welcome</title>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/files/css/w3.css">
 </head>
 <body>
 <form:form action="displayUserInfo" modelAttribute="user">
