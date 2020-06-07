@@ -8,10 +8,6 @@
 <title>Welcome friend</title>
 </head>
 <body>
-Hello ${name},
-	Nice to meet you. Your team members are:
-	<c:forEach var="member" items="${team}" >
-		${member}
-	</c:forEach>
+Hello ${user}, welcome!
 </body>
 </html>

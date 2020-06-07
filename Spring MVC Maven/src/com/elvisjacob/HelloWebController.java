@@ -1,32 +1,27 @@
 package com.elvisjacob;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloWebController {
-	
-	@RequestMapping(value = "/", method=RequestMethod.GET)
-	public String welcome() {
-		return "hello";
+
+	@GetMapping("/")
+	public ModelAndView home() {
+		ModelAndView modelandview = new ModelAndView("userForm");
+		User user = new User();
+		modelandview.addObject("user", user);
+		return modelandview;
 	}
 	
-	@GetMapping("displayname")
-	public ModelAndView display(@RequestParam("firstname") String name) {
-		ModelAndView modelandview = new ModelAndView("displayName");
-		List<String> names = new ArrayList<>();
-		names.add("Jay");
-		names.add("John");
-		names.add("Jason");
-		modelandview.addObject("name", name);
-		modelandview.addObject("team", names);
+	@PostMapping("/displayUserInfo")
+	public ModelAndView displayUserInfo(@ModelAttribute User user) {
+		ModelAndView modelandview = new ModelAndView("displayUserInfo");
+		System.out.println(user);
+		modelandview.addObject("user", user);
 		return modelandview;
 	}
 }
