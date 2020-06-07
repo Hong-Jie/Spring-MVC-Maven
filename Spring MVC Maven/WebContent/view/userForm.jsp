@@ -12,8 +12,7 @@
 <form:form action="displayUserInfo" modelAttribute="user">
 Name: <form:input path="name"/>
 <p/>
-Gender: <form:radiobutton path="gender" value="male"/> Male
-		<form:radiobutton path="gender" value="female"/> Female
+Gender: <form:radiobuttons path="gender" items="${genderMap}"/>
 		<p/>
 		<input type="submit" value="Submit">
 
